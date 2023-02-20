@@ -1,53 +1,60 @@
-
-
 package hillel;
-
-import java.lang.String;
 
 public class MainBurger {
     public static void main(String[] args) {
-        Burger burger1 = new Burger("bun", "meat", "cheese", "salad", "mayonnaise");
-        Burger burger2 = new Burger("bun", "meat", "cheese", "salad", "mayonnaise");
-        Burger burger3 = new Burger("bun", "meat", "cheese", "salad", "mayonnaise");
-
-
-        System.out.println(burger1.usualBurger());
-        System.out.println(burger2.dietaryBurger());
-        System.out.println(burger3.doubleBurger());
-
+        Burger burger1 = new Burger();
+        Burger burger2 = new Burger();
+        Burger burger3 = new Burger();
+        burger1.usualBurger();
+        burger2.dietaryBurger();
+        burger3.doubleBurger();
 
     }
 }
 
 class Burger {
-    private String bun;
-    private String meat;
-    private String cheese;
-    private String salad;
-    private String mayonnaise;
+    String bun;
+    String meat;
+    String cheese;
+    String greenery;
+    String mayonnaise;
 
-    public Burger(String bun, String meat, String cheese, String salad, String mayonnaise) {
+    public Burger(String bun, String meat, String cheese, String greenery, String mayonnaise) {
         this.bun = bun;
         this.meat = meat;
         this.cheese = cheese;
-        this.salad = salad;
+        this.greenery = greenery;
         this.mayonnaise = mayonnaise;
     }
 
-    public String usualBurger() {
+    public void usualBurger() {
+        System.out.println("Usual burger consist of: " + this.bun + "," + this.meat + "," + this.cheese + "," + this.greenery + "," + this.mayonnaise);
+    }
 
-        return "Usual burger is  " + this.bun + "," + this.meat + "," + this.cheese + "," + this.salad + "," + this.mayonnaise;
+    public Burger(String bun, String meat, String cheese, String greenery) {
+        this.bun = bun;
+        this.meat = meat;
+        this.cheese = cheese;
+        this.greenery = greenery;
+        this.mayonnaise = "without mayonnaise";
+
 
     }
 
-    public String dietaryBurger() {
-        return "Dietary burger is  " + this.bun + "," + this.meat + "," + this.cheese + "," + this.salad;
+    public void dietaryBurger() {
+        System.out.println("Dietary burger consist of: " + this.bun + "," + this.meat + "," + this.cheese + "," + this.greenery + "," + this.mayonnaise);
     }
 
-    public String doubleBurger() {
+    public Burger() {
+        this.bun = "bun";
         this.meat = "double meat";
-        return "Double meat burger is  " + this.bun + "," + this.meat + "," + this.cheese + "," + this.salad + "," + this.mayonnaise;
+        this.cheese = "cheese";
+        this.greenery = "greenery";
+        this.mayonnaise = "mayonnaise";
+    }
+
+    public void doubleBurger() {
+        System.out.println("Double meat burger consist of: " + this.bun + "," + this.meat + "," + this.cheese + "," + this.greenery + "," + this.mayonnaise);
 
     }
 }
-
